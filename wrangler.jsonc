@@ -18,10 +18,10 @@
   ],
   "observability": { "enabled": true },
   "vars": {
-    // Leave empty when the Worker runs on your app's own domain (the normal setup).
-    // Set to your app's address only for a standalone test on a workers.dev URL,
-    // for example "https://yourapp.bubbleapps.io/version-test".
-    "ORIGIN_URL": "",
+    // ORIGIN_URL is deliberately not listed. Leave it unset when the Worker runs on
+    // your app's own domain (the normal setup). For a standalone test on a
+    // workers.dev URL, add it under Settings, Variables and Secrets, for example
+    // "https://yourapp.bubbleapps.io/version-test".
     // "ai", "ai+social" or "all" (adds search engine crawlers).
     "BOT_SET": "ai+social",
     // Cost guards.

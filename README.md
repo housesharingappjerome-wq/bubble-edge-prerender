@@ -49,7 +49,7 @@ In the Cloudflare dashboard open **Workers & Pages**, choose the Worker, then **
 - Route: `www.yourdomain.com/*` (use the exact host your Bubble app runs on)
 - Zone: your domain
 
-Leave `ORIGIN_URL` empty. On a route, the Worker passes every normal visitor straight through to Bubble and only answers crawlers itself.
+Do not add an `ORIGIN_URL` variable. On a route, the Worker passes every normal visitor straight through to Bubble and only answers crawlers itself.
 
 ### 4. Connect the Bubble plugin
 
@@ -74,7 +74,7 @@ The response should contain your page's text, not an empty body.
 
 ## Standalone mode (testing without a custom domain)
 
-Set the `ORIGIN_URL` variable to your app's address, for example `https://yourapp.bubbleapps.io/version-test`, and use the Worker's `workers.dev` address as the plugin's Worker URL. The plugin actions and snapshot previews all work, which is useful for a trial. Real crawlers visiting your Bubble address are not affected until the Worker runs on your own domain.
+Open the Worker, then **Settings**, **Variables and Secrets**, and add a variable named `ORIGIN_URL` set to your app's address, for example `https://yourapp.bubbleapps.io/version-test`. Then use the Worker's `workers.dev` address as the plugin's Worker URL. The plugin actions and snapshot previews all work, which is useful for a trial. Real crawlers visiting your Bubble address are not affected until the Worker runs on your own domain.
 
 ## Settings
 
@@ -83,7 +83,7 @@ Change these under the Worker's **Settings**, **Variables and Secrets**, or in `
 | Variable | Default | What it does |
 |---|---|---|
 | `API_KEY` (secret) | none | Required. The plugin sends it with every call. |
-| `ORIGIN_URL` | empty | Only for standalone mode. |
+| `ORIGIN_URL` | not set | Only for standalone mode. Add it yourself when needed. |
 | `BOT_SET` | `ai+social` | `ai`, `ai+social`, or `all` (adds search engine crawlers). |
 | `EXTRA_BOTS` | empty | Extra user-agent tokens to treat as crawlers, comma separated. |
 | `MAX_PAGES` | `50` | Most pages the Worker will track. |
