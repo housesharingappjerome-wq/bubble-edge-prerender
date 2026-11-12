@@ -28,6 +28,8 @@ Click **Deploy to Cloudflare** above and follow the prompts. Cloudflare copies t
 - an R2 bucket (`SNAPSHOTS`) that holds the snapshot HTML;
 - a Browser Run binding (`BROWSER`) that renders the pages.
 
+If the form offers a database or bucket you already have, choose to create a new one for each. Two Workers must never share the same database and bucket.
+
 When the form asks for `API_KEY`, enter a long random value and keep a copy. This is the key you will paste into the plugin. If the form does not ask, add it after deploying: open the Worker, then **Settings**, **Variables and Secrets**, and add a secret named `API_KEY`.
 
 Prefer the command line? Clone the repository, then:
